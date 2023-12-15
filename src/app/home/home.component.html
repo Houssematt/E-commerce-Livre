@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Store Website</title>
+    <link rel="stylesheet" href="./home.component.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    
+  <section>
+
+      <div class="main">
+
+          <div class="main_tag">
+              <h1>WELCOME TO<br><span>A9RA TOUNSI</span></h1>
+
+              <p>
+                A9RA TOUNSI est une plateforme en ligne exclusive dédiée aux livres tunisiens.
+                Il propose une collection diversifiée de fiction, de non-fiction, de poésie, d'histoire et bien plus encore.
+                Les lecteurs peuvent facilement naviguer dans la sélection organisée et trouver des descriptions détaillées de livres.
+                Les auteurs tunisiens peuvent présenter leurs œuvres et se connecter avec une communauté de lecteurs passionnés.
+                La plateforme vise à promouvoir la littérature tunisienne et à préserver le patrimoine culturel de la Tunisie à travers son écriture.
+              </p>
+              <a href="#" class="main_btn">Learn More</a>
+
+          </div>
+
+          <div class="main_img">
+              <img src="https://4.bp.blogspot.com/-1-Av3L08FaY/Vm2wkh5XHCI/AAAAAAAAGAc/0EVIi_cdIws/s1600/collaage.jpg">
+          </div>
+
+      </div>
+
+  </section>
+
+
+
+
+  <!--Services-->
+
+  <div class="services">
+
+      <div class="services_box">
+
+          <div class="services_card">
+              <i class="fa-solid fa-truck-fast"></i>
+              <h3>Fast Delivery</h3>
+              <p>
+                Get your books delivered to your doorstep quickly and efficiently. 
+              </p>
+          </div>
+
+          <div class="services_card">
+              <i class="fa-solid fa-headset"></i>
+              <h3>24 x 7 Services</h3>
+              <p>
+                Enjoy round-the-clock supportfor any queries or concerns you may have.
+              </p>
+          </div>
+
+          <div class="services_card">
+              <i class="fa-solid fa-tag"></i>
+              <h3>Best Deal</h3>
+              <p>
+                Discover great offers on a wide range of Tunisian books.
+              </p>
+          </div>
+
+          <div class="services_card">
+              <i class="fa-solid fa-lock"></i>
+              <h3>Secure Payment</h3>
+              <p>
+                Your payment information is protected with our secure payment system.
+              </p>
+          </div>
+
+      </div>
+
+  </div>
+
+
+
+
+  <!--About-->
+
+  
+
+
+  <!--Books-->
+
+  <div class="featured_boks">
+    <h1>Featured Books</h1>
+    <div class="featured_book_box">
+      <div *ngFor="let book of books" class="featured_book_card">
+        <div class="featurde_book_img">
+          <img [src]="book.imageUrl" alt="{{ book.title }}">
+        </div>
+        <div class="featurde_book_tag">
+          <h2>{{ book.title }}</h2>
+            <p>{{ book.price }} TND</p> 
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+
+  
+  <!--Arrivals-->
+
+ 
+
+
+
+
+  <!--reviews-->
+
+  
+
+
+
+  <!--Footer-->
+
+  <footer>
+      <div class="footer_main">
+
+          <div class="tag">
+              
+              <p>
+                « A9ra Tounsi » peut contribuer à mettre en valeur les diverses voix et histoires des écrivains tunisiens, favorisant ainsi une communauté littéraire dynamique.
+              </p>
+
+          </div>
+
+          <div class="tag">
+              <h1>Quick Link</h1>
+              <a routerLink="/home">Home</a>
+              <a routerLink="/books">Book List</a>
+              <a routerLink="/login">Login</a>
+              <a routerLink="/signup">Signup</a>
+              <a routerLink="/shop">ShopingCart</a>
+              
+          </div>
+
+          <div class="tag">
+              <h1>Contact Info</h1>
+              <a href="#"><i class="fa-solid fa-phone"></i>+216 22 796 862</a>
+              <a href="#"><i class="fa-solid fa-phone"></i>+216 22 796 862</a>
+              <a href="#"><i class="fa-solid fa-envelope"></i>bookstoreTN@gmail.com</a>
+              
+          </div>
+
+          <div class="tag">
+              <h1>Follow Us</h1>
+              <div class="social_link">
+                  <i class="fa-brands fa-facebook-f"></i>
+                  <i class="fa-brands fa-instagram"></i>
+                  <i class="fa-brands fa-twitter"></i>
+                  <i class="fa-brands fa-linkedin-in"></i>
+              </div>
+              
+          </div>
+
+          <div class="tag">
+              <h1>Newsletter</h1>
+              <div class="search_bar">
+                  <input type="text" placeholder="You email id here">
+                  <button type="submit">Subscribe</button>
+              </div>                
+          </div>            
+          
+      </div>
+
+  </footer>
+
+
+
+
+
+  
+</body>
+</html>
+    
+    
+
+
+
+

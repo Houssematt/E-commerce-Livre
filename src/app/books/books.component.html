@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+<div class="card-container">
+  <div *ngFor="let book of books; let i = index" class="card" [@expandCollapse]="i === expandedIndex">
+    <!-- Card content... -->
+    <img *ngIf="book.imageUrl" class="card-img-top" [src]="book.imageUrl" alt="{{ book.title }}">
+    <div class="card-body">
+      <h4 class="card-title">{{ book.title }}</h4>
+      <p class="card-text">{{ book.price }} TND</p>
+      <div class="card-description" [class.show-more]="i === expandedIndex">
+        {{ book.description }}
+      </div>
+      <button class="btn-show-more" (click)="toggleDescription(i)">
+        {{ i === expandedIndex ? 'Show Less' : 'Show More' }}
+      </button>
+    </div>
+    <div class="card-footer">
+      <button (click)="addToCart(book)" class="btn btn-secondary btn-block">Add to Cart</button>
+      <!-- Other footer content... -->
+    </div>
+  </div>
+</div>
+</body>
+</html>

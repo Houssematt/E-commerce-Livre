@@ -1,0 +1,84 @@
+<style>
+    /* livraison.component.css */
+
+h2 {
+  color: #333;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+thead {
+  background-color: #f2f2f2;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.books-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.book-item {
+  margin-bottom: 5px;
+}
+.delivered {
+  background-color: green;
+  color: white;
+}
+
+</style>
+
+<!-- livraison.component.html -->
+
+<!-- livraison.component.html -->
+
+<!-- livraison.component.html -->
+
+<h2>Orders for Livraison</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Phone Number</th>
+      <th>CIN</th>
+      <th>Total</th>
+      <th>Books</th>
+      <th>Delivered</th> <!-- New column for delivery status -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let order of orders" class="order-item">
+      <td>{{ order.firstName }} {{ order.lastName }}</td>
+      <td>{{ order.address }}</td>
+      <td>{{ order.phoneNumber }}</td>
+      <td>{{ order.cin }}</td>
+      <td>{{ order.total }}</td>
+      <td>
+        <ul class="books-list">
+          <li *ngFor="let book of order.books" class="book-item">
+            {{ book.title }} - Quantity: {{ book.quantity }}
+          </li>
+        </ul>
+      </td>
+      <td>
+        <button (click)="toggleDeliveryStatus(order)" [class.delivered]="order.delivered">Deliver</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

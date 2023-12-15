@@ -1,0 +1,25 @@
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>LogIn</title>
+</head>
+<body>
+    <div  style="width: 100%;" class="container">
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <h1>Login</h1>
+    
+            <input type="email" formControlName="email" id="email" name="Email" placeholder="Email" required>
+            <input type="password" formControlName="password" id="password" name="Password" placeholder="Password" required>
+        
+            <input type="submit" value="Login" id="button">
+            <a class="login" routerLink="/signup" (click)="sbtn1()">
+           <p>Create a new account?</p></a>
+
+  
+
+        </form>
+    </div>
+</body>
+</html>

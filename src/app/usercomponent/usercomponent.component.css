@@ -1,0 +1,134 @@
+/* FILEPATH: /D:/angular/TPDsi/src/app/usercomponent/usercomponent.component.css */
+
+/* Styles for the Users table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+/* Styles for the buttons */
+button {
+  padding: 8px 16px;
+  margin-right: 8px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Styles for the form */
+form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+}
+
+label {
+  margin-bottom: 8px;
+}
+
+input {
+  padding: 8px;
+  margin-bottom: 8px;
+}
+
+button[type="submit"] {
+  background-color: #4CAF50;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+button[type="submit"],
+button[type="button"] {
+  padding: 8px 16px;
+  margin-right: 8px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button[type="button"]:hover {
+  background-color: #45a049;
+}
+
+.formu{
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f2f2f2;
+    box-shadow: 0 0 10px #ccc;
+}
+
+/* user.component.css */
+
+/* Style for the Users Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  /* Style for the Create/Update Form */
+  form {
+    margin-top: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  /* Style for User Photos */
+  td img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Make the image a circle */
+    object-fit: cover;
+  }
+  

@@ -1,0 +1,74 @@
+<!-- add-book.component.html -->
+<style>
+    body {
+    font-family: Arial, sans-serif;
+}
+
+.form-container {
+    width: 300px;
+    margin: 0 auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"], input[type="number"], textarea {
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="checkbox"] {
+    margin-bottom: 16px;
+}
+
+button[type="submit"] {
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+</style>
+
+<div class="form-container">
+    <h2>Add a New Book</h2>
+    <form  (ngSubmit)="addBook()" [formGroup]="bookForm">
+      <label>Title:</label>
+      <input type="text" name="title" formControlName="title" />
+  
+      <label>Rating:</label>
+      <input type="number" name="rating" formControlName="rating" />
+  
+      <label>Author </label>
+      <input type="text" name="authors" formControlName="authors" />
+  
+      <label>Price:</label>
+      <input type="number" name="price" formControlName="price" />
+  
+      <label>Stock</label>
+        <input type="text" name="stock" formControlName="stock" />
+
+
+  
+      <label>Description:</label>
+      <textarea name="description" formControlName="description"></textarea>
+  
+      <label>Image URL:</label>
+      <input type="text" name="imageUrl" formControlName="imageUrl" />
+  
+      <label>Show Full Description:</label>
+      <input type="checkbox" name="showFullDescription" formControlName="showFullDescription" />
+  
+      <button type="submit">Add Book</button>
+    </form>
+  </div>
+  

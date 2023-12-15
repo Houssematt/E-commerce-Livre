@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>SignUp</title>
+</head>
+<body>
+    <div style="width: 100%;" class="container">
+        <form [formGroup]="singup" (ngSubmit)="singupdata(singup)">
+            <h1>Signup</h1>
+
+    
+            <input type="email" formControlName="email" id="email" name="Email" placeholder="Email" required>
+            <div *ngIf="singup.get('email').hasError('required') && singup.get('email').touched">Email is required.</div>
+            <div *ngIf="singup.get('email').hasError('email') && singup.get('email').touched">Invalid email format.</div>
+
+            
+            <input type="password" formControlName="password" id="password" name="Password" placeholder="Password" required>
+            <div *ngIf="singup.get('password').hasError('required') && singup.get('password').touched">Password is required.</div>
+            <div *ngIf="singup.get('password').hasError('minlength') && singup.get('password').touched">Password must be at least 8 characters long.</div>
+            <!-- Add other password validation messages as needed -->
+
+            
+            <input type="text" formControlName="name" id="name" name="Name" placeholder="Name" required>
+            <div *ngIf="singup.get('name').hasError('required') && singup.get('name').touched">Name is required.</div>
+            <div *ngIf="singup.get('name').hasError('pattern') && singup.get('name').touched">Name must start with an uppercase letter.</div>
+            <div *ngIf="singup.get('name').hasError('minlength') && singup.get('name').touched">Name must be at least 3 characters long.</div>
+
+            
+            <input type="text" formControlName="prenom" id="prenom" name="prenom" placeholder="Prenom" required>
+            <div *ngIf="singup.get('prenom').hasError('required') && singup.get('prenom').touched">Name is required.</div>
+            <div *ngIf="singup.get('prenom').hasError('pattern') && singup.get('prenom').touched">Name must start with an uppercase letter.</div>
+            <div *ngIf="singup.get('prenom').hasError('minlength') && singup.get('prenom').touched">Name must be at least 3 characters long.</div>
+            <!-- Add error messages for 'prenom' as needed -->
+
+            
+            <input type="url" formControlName="image" id="image" name="image" placeholder="image" required>
+            
+
+            <div>
+                <label class="role" for="role">Role:</label>
+                <input id="role" class="radio" type="radio" formControlName="role" value="user" checked style="width: 30px;"> User
+                <input id="role" class="radio" type="radio" formControlName="role" value="admin" style="width: 30px;"> Admin
+            </div>
+
+            <label for="exampleCheck1" class="form-check-label">Agree to terms and conditions</label>
+            <input type="checkbox" class="checkbox" id="exampleCheck1">
+
+            <input type="submit" value="Signup" id="button">
+            <a class="login" routerLink="/login" (click)="sbtn()">
+                <p>Create a new account?</p>
+            </a>
+        </form>
+    </div>
+</body>
+</html>

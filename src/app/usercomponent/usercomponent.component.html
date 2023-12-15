@@ -1,0 +1,60 @@
+<!-- usercomponent.component.html -->
+<div *ngIf="!isUpdateFormVisible">
+    <h2>Users</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Email</th>
+          <th>Name</th>
+          <th>Prenom</th>
+          <th>image</th>
+          <th>Role</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.id }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.name }}</td>
+          <td>{{ user.prenom }}</td>
+          <td><img *ngIf="user.image" class="card-img-top" [src]="user.image" ></td>
+          <td>{{ user.role }}</td>
+          <td>
+            <button (click)="showUpdateForm(user)">Update</button>
+            <button (click)="deleteUser(user.id!)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <button (click)="addmodel()">Add New User</button>
+  </div>
+  
+  <div class="formu" *ngIf="isUpdateFormVisible">
+    <h2>Update User</h2>
+    <form [formGroup]="userForm" (ngSubmit)="updateUser(selectedUser!)">
+      <label for="email">Email:</label>
+      <input type="text" id="email" formControlName="email" required>
+  
+      <label for="password">Password:</label>
+      <input type="password" id="password" formControlName="password" required>
+  
+      <label for="name">Name:</label>
+      <input type="text" id="name" formControlName="name" required>
+  
+      <label for="prenom">Prenom:</label>
+      <input type="text" id="prenom" formControlName="prenom" required>
+  
+      <label for="phone">image url:</label>
+      <input type="text" id="image" formControlName="image">
+  
+      <label for="role">Role:</label>
+      <input type="text" id="role" formControlName="role" required>
+  
+      <button type="submit">Update User</button>
+      <button (click)="cancelUpdate()">Cancel</button>
+    </form>
+  </div>
+  
